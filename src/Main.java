@@ -167,6 +167,9 @@ public class Main {
             arrayOfNum[i] = Integer.parseInt(inputNum[i]);
             sum = Integer.parseInt(inputNum[i]) + sum;
         }
+        int[] copyOfArrayOfNum = new int[arrayOfNum.length];
+        System.arraycopy(arrayOfNum, 0, copyOfArrayOfNum, 0, copyOfArrayOfNum.length);
+
         for (int i = 0; i < numOfIt; i++) {
             for (int j = i + 1; j < numOfIt; j++) {
                 if (arrayOfNum[i] > arrayOfNum[j]) {
@@ -176,12 +179,9 @@ public class Main {
                 }
             }
         }
-        int[] copyOfArrayOfNum = new int[arrayOfNum.length];
-        System.arraycopy(arrayOfNum, 0, copyOfArrayOfNum, 0, copyOfArrayOfNum.length);
-        Arrays.sort(copyOfArrayOfNum);
         if (Arrays.equals(arrayOfNum, copyOfArrayOfNum)) {
             System.out.println("Talen är i ordning");
-        } else if (!Arrays.equals(arrayOfNum, copyOfArrayOfNum)) {
+        } else {
             System.out.println("Talen är inte i ordning");
         }
 
