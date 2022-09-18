@@ -157,7 +157,7 @@ public class Main {
     }
 
 
-    public static void sort() {
+    private static void sort() {
         Scanner scan = new Scanner(System.in);
         int sum = 0;
         int numOfIt = 5;
