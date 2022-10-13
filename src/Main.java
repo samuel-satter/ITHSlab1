@@ -10,7 +10,8 @@ public class Main {
             String input = scan.nextLine();
             if (input.equals("1")) {
                 System.out.println("Ange x antal ord separera dem med radbrytning, avsluta med att skriva END");
-                reverseString();
+                UppOchNer uppOchNer = new UppOchNer();
+                uppOchNer.reverseString();
                 System.out.println();
                 displayMenu();
             } else if (input.equals("2")) {
@@ -39,28 +40,6 @@ public class Main {
         System.out.println("3. Sten Sax Påse");
         System.out.println("4. Ordning och reda");
         System.out.println("e. Avsluta");
-    }
-
-    private static void reverseString() {
-        Scanner scan = new Scanner(System.in);
-        String inputWord = scan.nextLine();
-        String[] wordArray = new String[0];
-        while (!inputWord.equalsIgnoreCase("end")) {
-            wordArray = addWord(wordArray, inputWord);
-            inputWord = scan.nextLine();
-        }
-        for (int i = wordArray.length - 1; i >= 0; i--) {
-            System.out.println(wordArray[i]);
-        }
-    }
-
-    private static String[] addWord(String[] inputArray, String newWord) {
-        String[] temp = new String[inputArray.length + 1];
-        for (int i = 0; i < inputArray.length; i++) {
-            temp[i] = inputArray[i];
-        }
-        temp[temp.length - 1] = newWord;
-        return temp;
     }
 
 
