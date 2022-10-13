@@ -16,7 +16,8 @@ public class Main {
                 displayMenu();
             } else if (input.equals("2")) {
                 System.out.println("Ange 5 heltal, använd enter för att separera dem");
-                largestNumber();
+                MinMax minMax = new MinMax();
+                minMax.largestNumber();
                 System.out.println();
                 displayMenu();
             } else if (input.equals("3")) {
@@ -42,25 +43,6 @@ public class Main {
         System.out.println("e. Avsluta");
     }
 
-
-    private static void largestNumber() {
-        Scanner scan = new Scanner(System.in);
-        int numOfIt = 5;
-        int largestNum = Integer.MIN_VALUE;
-        int smallestNum = Integer.MAX_VALUE;
-
-        for (int i = 0; i < numOfIt; i++) {
-            int inputNum = scan.nextInt();
-            if (inputNum > largestNum) {
-                largestNum = inputNum;
-            }
-            if (inputNum < smallestNum) {
-                smallestNum = inputNum;
-            }
-        }
-        System.out.println("Min value: " + smallestNum);
-        System.out.println("Max value: " + largestNum);
-    }
 
     private static void rps() {
         int userScore = 0;
