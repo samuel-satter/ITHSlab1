@@ -28,6 +28,11 @@ public class StenSaxPase {
             computerScore += resultArray[1];
             System.out.println("Du har vunnit " + userScore + " runda/rundor");
             System.out.println("Datorn har vunnit " + computerScore + " runda/rundor");
+            if (userScore == 3){
+                userWon();
+            } else if (computerScore == 3) {
+                computerWon();
+            }
 
         }
     }
@@ -58,6 +63,14 @@ public class StenSaxPase {
         }
         return computerMove;
     }
+
+    private void userWon(){
+        System.out.println("Du vann matchen!");
+    }
+    private void computerWon(){
+        System.out.println("Datorn vann matchen!");
+    }
+
 
     private void roundDraw() {
         System.out.println("Det blev lika den här rundan!");
